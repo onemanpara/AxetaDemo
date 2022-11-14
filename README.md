@@ -83,7 +83,7 @@ gradle clean test
 *Для запуска сборки необходимо указать значения параметров и нажать кнопку <code><strong>*Собрать*</strong></code>.*
 
 <p align="center">
-  <img src="images/screens/Jenkins.jpg" alt="Jenkins" width="800">
+  <img src="images/screens/jenkins.jpg" alt="Jenkins" width="800">
 </p>
 
 *После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
