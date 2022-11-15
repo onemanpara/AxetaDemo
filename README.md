@@ -83,6 +83,7 @@ gradle clean test
 > <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты (_по умолчанию - <code>1920x1080</code>_).
 > 
 > <code>messageText</code> – Сообщение для формы обратной связи , а также для бота telegram, по умолчанию - <code>Тестирование формы обратной связи</code>.
+> 
 > <code>remote</code> – логин, пароль и адрес удаленного сервера Selenoid, по умолчанию <code>указаны в сборке Jenkins</code>.
 
 ## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/15-onemanpara-hw15-axeta/)
