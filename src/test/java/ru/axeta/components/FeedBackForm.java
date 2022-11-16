@@ -18,7 +18,7 @@ public class FeedBackForm {
 
 
     public FeedBackForm openPage() {
-        open("/contacts");
+        open("http://axeta.ru/contacts");
         return this;
     }
 

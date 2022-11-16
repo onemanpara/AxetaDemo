@@ -13,17 +13,17 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class AxetaTests extends Data {
+public class AxetaTests extends TestBase {
 
     FeedBackForm feedBackForm = new FeedBackForm();
     ShortFeedBackForm shortFeedBackForm = new ShortFeedBackForm();
     ProjectPage projectPage = new ProjectPage();
-
+    TestData testData = new TestData();
 
     @Test
     @DisplayName("В заголовке первого баннера \"Разработка мобильных приложений\"")
     void setUP() {
-        step("Открываем главную страницу", () -> open(mainPage));
+        step("Открываем главную страницу", () -> open(testData.mainPage));
         step("Проверяем, что в первом баннере заголовок \"Разработка мобильных приложений\"", () -> {
             $x("//h1[contains(text(), 'Разработка мобильных приложений')]").shouldBe(visible);
         });
@@ -32,14 +32,14 @@ public class AxetaTests extends Data {
     @Test
     @DisplayName("Вызов формы обратной связи, валидация контактов.")
     void callBack() {
-        step("Открываем главную страницу", () -> open(mainPage));
+        step("Открываем главную страницу", () -> open(testData.mainPage));
         step("Вызываем форму обратной связи", () -> {
             shortFeedBackForm.openForm();
         });
         step("Проверяем отображение контактов компании", () -> {
-            shortFeedBackForm.contactsIsVisible("phone", firmPhone);
-            shortFeedBackForm.contactsIsVisible("email", firmEmail);
-            shortFeedBackForm.contactsIsVisible("skype", firmSkype);
+            shortFeedBackForm.contactsIsVisible("phone", testData.firmPhone);
+            shortFeedBackForm.contactsIsVisible("email", testData.firmEmail);
+            shortFeedBackForm.contactsIsVisible("skype", testData.firmSkype);
         });
     }
 
@@ -50,11 +50,11 @@ public class AxetaTests extends Data {
             feedBackForm.openPage();
         });
         step("Заполняем форму данными", () -> {
-            feedBackForm.setName(name)
-                    .setEmail(email)
-                    .setPhone(phone)
-                    .setFile(filePath)
-                    .setMessageText(messageText);
+            feedBackForm.setName(testData.name)
+                    .setEmail(testData.email)
+                    .setPhone(testData.phone)
+                    .setFile(testData.filePath)
+                    .setMessageText(testData.messageText);
         });
         step("Отправляем форму", () -> {
             feedBackForm.sendButtonClick();
@@ -67,7 +67,7 @@ public class AxetaTests extends Data {
     @Test
     @DisplayName("Проверяем H1 на странице проекта")
     void h1AtProjectPageCheck() {
-        step("Открываем главную страницу", () -> open(mainPage));
+        step("Открываем главную страницу", () -> open(testData.mainPage));
         step("Кликаем на ссылку \"Проекты\" в хедере", () -> {
             projectPage.projectsPageClick();
         });
@@ -84,7 +84,7 @@ public class AxetaTests extends Data {
     @Disabled("Данный тест отключен, т.к. сейчас в консоли есть ошибка.")
     void consoleShouldNotHaveErrorsTest() {
         step("Открываем главную страницу'", () ->
-                open(mainPage));
+                open(testData.mainPage));
         step("Проверяем, что в логах консоли нет ошибок (строк с \"SEVERE\")", () -> {
             String consoleLogs = DriverUtils.getConsoleLogs();
             String errorText = "SEVERE";
