@@ -43,6 +43,7 @@ public class AxetaTests extends TestBase {
         });
     }
 
+    @Disabled
     @Test
     @DisplayName("Отправка формы обратной связи со страницы /contacts")
     void feedBackFormTest() {
