@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class ProjectPage {
 
-    SelenideElement projectLink = $x("//a[contains(text(),'Проекты')]"),
+    private final static SelenideElement projectLink = $x("//a[contains(text(),'Проекты')]"),
             viewCaseButton = $x("//h2[contains(text(), 'Марафон')]")
             .parent().$(".view-review"),
             h1 = $("h1");
