@@ -87,7 +87,7 @@ gradle clean test
 > 
 > <code>remote</code> – логин, пароль и адрес удаленного сервера Selenoid, по умолчанию <code>указаны в сборке Jenkins</code>.
 
-## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/15-onemanpara-hw15-axeta/)
+## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/15-onemanpara-hw15-axetademo/)
 
 *Для запуска сборки необходимо указать значения параметров и нажать кнопку <code><strong>*Собрать*</strong></code>.*
 
