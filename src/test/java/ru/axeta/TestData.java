@@ -8,15 +8,16 @@ public class TestData {
     Faker faker = new Faker(new Locale("ru"));
     Faker fakerEn = new Faker(new Locale("en"));
 
-    String firmPhone = "+7 (964) 558 64 72";
-    String firmEmail = "info@axeta.ru";
-    String firmSkype = "axetacom";
-    String name = faker.name().name();
-    String email = fakerEn.internet().emailAddress();
-    String phone = faker.phoneNumber().subscriberNumber(10);
-    String filePath = "resume.pdf";
-    String messageText = System.getProperty("messageText");
-    String mainPage = "http://axeta.ru/";
+    protected String
+            firmPhone = "+7 (964) 558 64 72",
+            firmEmail = "info@axeta.ru",
+            firmSkype = "axetacom",
+            name = faker.name().name(),
+            email = fakerEn.internet().emailAddress(),
+            phone = faker.phoneNumber().subscriberNumber(10),
+            filePath = "resume.pdf",
+            messageText = System.getProperty("messageText"),
+            mainPage = "http://axeta.ru/";
 
 }
 
